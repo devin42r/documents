@@ -1,0 +1,13 @@
+netstat -lnt | awk '$6 == "LISTEN" && $4 ~ ".445"'
+
+pg_dump -t email_templates -d gadzoomn_cpayroll | psql -d gadzoomn_cpayroll -h 35.164.21.40 -U gadzoomn_admin
+
+find -path ./node_modules -prune -o -iname "index*"
+
+sudo systemctl start mongodb
+
+find . -maxdepth 1 -name '.*' -exec rm -rf {} \;
+
+rsync -azvl --exclude '.cache*' --exclude '.PhpStorm*'  --exclude '.WebStorm*' --exclude '.config*' --exclude '.local*' --exclude '.mozilla' --exclude '.npm*' --exclude '.vagrant*' --exclude '.thunderbird*' --exclude 'Downloads*' --exclude 'node_modules*' /home/devin/ /media/devin/Seagate\ Exp/Devin/LinuxBackups
+
+[ -d /sys/firmware/efi ] && echo UEFI || echo BIOS
